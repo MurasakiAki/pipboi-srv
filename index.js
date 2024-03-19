@@ -31,7 +31,6 @@ function saveScores(scores) {
     }
 }
 
-// Middleware to parse JSON requests
 app.use(express.json());
 
 // Endpoint to get scores
@@ -73,7 +72,7 @@ app.get('/write_score/:username/:gamename/:score', (req, res) => {
 
     saveScores(scores);
 
-    res.send("Scores saved successfully!");
+    res.json(scores);
 });
 
 // Handle invalid endpoints
