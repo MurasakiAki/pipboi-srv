@@ -1,5 +1,17 @@
 {
-    "username" : {
-        "gamename" : 6
-    }
+    "user" : [
+        {"username" : "Erik"},
+        {
+            "games" : [
+                {
+                    "gamename" : "LickingToes", 
+                    "score" : 120
+                },
+                {
+                    "gamename" : "AssSlapping",
+                    "score" : 99
+                }
+            ]
+        }
+    ]
 }
