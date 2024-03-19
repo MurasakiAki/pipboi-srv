@@ -5,7 +5,7 @@ const PORT = 3000;
 
 // Function to load existing scores from JSON file
 function loadScores() {
-    const file = 'scores.json';
+    const file = '.scores.json';
     try {
         if (fs.existsSync(file)) {
             const json = fs.readFileSync(file);
@@ -21,7 +21,7 @@ function loadScores() {
 
 // Function to save scores to JSON file
 function saveScores(scores) {
-    const file = 'scores.json';
+    const file = '.scores.json';
     try {
         const json = JSON.stringify(scores, null, 4);
         fs.writeFileSync(file, json);
