@@ -1,17 +1,34 @@
 {
-    "user" : [
-        {"username" : "Erik"},
-        {
-            "games" : [
-                {
-                    "gamename" : "LickingToes", 
-                    "score" : 120
-                },
-                {
-                    "gamename" : "AssSlapping",
-                    "score" : 99
-                }
-            ]
-        }
+    "users" : [
+        {"user" : [
+            {"username" : "Erik"},
+            {
+                "games" : [
+                    {
+                        "gamename" : "LickingToes", 
+                        "score" : 120
+                    },
+                    {
+                        "gamename" : "AssSlapping",
+                        "score" : 99
+                    }
+                ]
+            }
+        ]},
+        {"user" : [
+            {"username" : "Zelenej"},
+            {
+                "games" : [
+                    {
+                        "gamename" : "Fedora Programming", 
+                        "score" : 99999
+                    },
+                    {
+                        "gamename" : "EatingPizza",
+                        "score" : 2
+                    }
+                ]
+            }
+        ]}
     ]
 }
