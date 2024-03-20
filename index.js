@@ -1,6 +1,12 @@
 const express = require('express');
 const fs = require('fs');
+const http = require('http');
+const socketIo = require('socket.io');
+
 const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
 const PORT = 3000;
 
 // Function to load existing scores from JSON file
@@ -72,7 +78,20 @@ app.get('/write_score/:username/:gamename/:score', (req, res) => {
 
     saveScores(scores);
 
+    // Broadcast scores to all connected clients
+    io.emit('scoresUpdated', scores);
+
     res.json(scores);
+});
+
+// Socket.io connection handling
+io.on('connection', (socket) => {
+    console.log('A user connected');
+
+    // Handle disconnections
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
 });
 
 // Handle invalid endpoints
@@ -81,6 +100,6 @@ app.use((req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
